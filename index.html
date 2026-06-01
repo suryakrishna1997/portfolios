@@ -1,0 +1,679 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<meta name="theme-color" content="#050810">
+<title>Surya Hemanth Krishna — Senior Automotive Test Engineer</title>
+<meta name="description" content="Portfolio of Surya Hemanth Krishna - Automotive Embedded Test Engineer specializing in Infotainment, Connectivity, and AI-driven Test Automation.">
+<link rel="preconnect" href="https://fonts.googleapis.com">
+<link rel="preconnect" href="https://fonts.gstatic.com" crossorigin>
+<link href="https://fonts.googleapis.com/css2?family=Space+Grotesk:wght@400;600;700&family=Inter:wght@400;500;600&family=JetBrains+Mono:wght@400;600&display=swap" rel="stylesheet">
+<link rel="stylesheet" href="https://cdnjs.cloudflare.com/ajax/libs/font-awesome/6.5.0/css/all.min.css" integrity="sha512-..." crossorigin="anonymous" referrerpolicy="no-referrer">
+<style>
+:root{
+  --bg:#050810;
+  --bg-2:#0a1224;
+  --surface:rgba(17,25,40,.85);
+  --glass:rgba(255,255,255,.06);
+  --text:#e6edf6;
+  --text-2:#9fb0c8;
+  --text-3:#6b7d95;
+  --c1:#3b82f6; --c2:#8b5cf6; --c3:#06b6d4; --c4:#f59e0b; --c5:#ec4899;
+  --radius:18px;
+  --shadow:0 20px 60px rgba(0,0,0,.5);
+  --nav:72px;
+  --max:1180px;
+  --transition:all .3s cubic-bezier(.4,0,.2,1);
+}
+*{box-sizing:border-box;margin:0;padding:0}
+html{scroll-behavior:smooth;scroll-padding-top:var(--nav)}
+body{
+  font-family:Inter,system-ui,-apple-system,sans-serif;
+  background:var(--bg); color:var(--text);
+  overflow-x:hidden; line-height:1.65;
+  background-image:
+    radial-gradient(1200px 800px at 10% -10%, rgba(59,130,246,.12), transparent 60%),
+    radial-gradient(1000px 700px at 90% 10%, rgba(139,92,246,.1), transparent 60%),
+    radial-gradient(800px 600px at 50% 120%, rgba(6,182,212,.08), transparent 60%);
+  background-attachment:fixed;
+}
+::selection{background:rgba(139,92,246,.4);color:white}
+h1,h2,h3,h4{font-family:"Space Grotesk",Inter,sans-serif; font-weight:700; letter-spacing:-.02em; line-height:1.2}
+h1{font-size:clamp(2.5rem,6vw,4.5rem)}
+h2{font-size:clamp(1.6rem,3.5vw,2.2rem)}
+h3{font-size:clamp(1.2rem,2vw,1.4rem)}
+p{color:var(--text-2)}
+a{color:inherit;text-decoration:none;transition:var(--transition)}
+a:focus-visible{outline:2px solid var(--c1);outline-offset:2px;border-radius:4px}
+.container{width:92%;max-width:var(--max);margin-inline:auto;padding:0 1rem}
+
+/* Progress Bar */
+.progress{position:fixed;top:0;left:0;height:3px;width:0;background:linear-gradient(90deg,var(--c1),var(--c2),var(--c3));z-index:2000;transition:width .15s ease-out}
+
+/* Navigation */
+nav{position:fixed;top:0;width:100%;height:var(--nav);z-index:1000;display:flex;align-items:center;
+  background:rgba(5,8,16,.9);backdrop-filter:blur(12px);border-bottom:1px solid rgba(255,255,255,.08)}
+.nav-inner{display:flex;justify-content:space-between;align-items:center;width:100%}
+.brand{display:flex;gap:.6rem;align-items:center;font-family:"Space Grotesk";font-weight:700;font-size:1.1rem}
+.brand-badge{width:32px;height:32px;border-radius:8px;background:linear-gradient(135deg,var(--c1),var(--c2));display:grid;place-items:center}
+.brand-badge i{font-size:14px;color:white}
+.nav-links{display:flex;gap:1.2rem;list-style:none}
+.nav-links a{color:var(--text-2);font-weight:500;font-size:.9rem;position:relative;padding:.3rem 0}
+.nav-links a::after{content:"";position:absolute;left:0;bottom:-4px;height:2px;width:0;background:linear-gradient(90deg,var(--c1),var(--c2));transition:var(--transition)}
+.nav-links a:hover,.nav-links a:focus{color:white}
+.nav-links a:hover::after,.nav-links a:focus::after{width:100%}
+.cta-small{padding:.5rem .85rem;border-radius:10px;background:linear-gradient(135deg,var(--c1),var(--c2));color:white;font-weight:600;font-size:.9rem;transition:var(--transition);border:none;cursor:pointer}
+.cta-small:hover,.cta-small:focus{transform:translateY(-2px);box-shadow:0 8px 25px rgba(59,130,246,.4)}
+
+/* Mobile Toggle */
+.mobile-toggle{display:none;background:transparent;border:1px solid rgba(255,255,255,.15);color:var(--text);padding:.45rem .7rem;border-radius:8px;cursor:pointer;font-size:1rem}
+.mobile-toggle:hover,.mobile-toggle:focus{background:rgba(255,255,255,.08)}
+
+/* Mobile Menu */
+.mobile-menu{position:fixed;inset:0;background:rgba(2,6,23,.98);backdrop-filter:blur(12px);z-index:1500;transform:translateY(-100%);transition:transform .3s ease;display:flex;align-items:flex-start;padding-top:calc(var(--nav) + 1rem)}
+.mobile-menu.open{transform:translateY(0)}
+.mobile-inner ul{list-style:none;padding:0;margin:0;display:flex;flex-direction:column;gap:.5rem}
+.mobile-inner a{color:var(--text);font-size:1.1rem;padding:.8rem 1rem;border-radius:10px;display:block}
+.mobile-inner a:hover,.mobile-inner a:focus{background:rgba(255,255,255,.08)}
+
+/* Hero Section */
+#hero{min-height:100svh;display:grid;place-items:center;padding-top:var(--nav);position:relative}
+.hero-grid{display:grid;grid-template-columns:1.1fr .9fr;gap:2.5rem;align-items:center}
+.eyebrow{display:inline-flex;align-items:center;gap:.4rem;padding:.35rem .7rem;border-radius:999px;background:rgba(59,130,246,.15);border:1px solid rgba(59,130,246,.35);color:#bcd3ff;font-weight:600;font-size:.8rem;margin-bottom:1rem}
+.hero-title{background:linear-gradient(180deg,#fff 0%,#b8c6e0 100%);-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent;margin-bottom:1rem}
+.hero-sub{font-size:clamp(1rem,1.8vw,1.15rem);max-width:55ch;margin-bottom:1.5rem}
+.hero-actions{display:flex;gap:.7rem;flex-wrap:wrap}
+.btn{display:inline-flex;align-items:center;gap:.5rem;padding:.85rem 1.2rem;border-radius:12px;font-weight:600;transition:var(--transition);border:1px solid transparent;cursor:pointer;font-size:.95rem}
+.btn-primary{background:linear-gradient(135deg,var(--c1),var(--c2));color:white;box-shadow:0 10px 25px rgba(59,130,246,.3)}
+.btn-primary:hover,.btn-primary:focus{transform:translateY(-2px);box-shadow:0 14px 35px rgba(59,130,246,.45)}
+.btn-ghost{background:var(--glass);border-color:rgba(255,255,255,.12);color:var(--text)}
+.btn-ghost:hover,.btn-ghost:focus{background:rgba(255,255,255,.12);border-color:var(--c1)}
+
+.stats{display:flex;gap:.8rem;flex-wrap:wrap;margin-top:1.5rem}
+.stat{padding:.7rem .9rem;background:var(--surface);border:1px solid rgba(255,255,255,.1);border-radius:12px;backdrop-filter:blur(8px);min-width:120px}
+.stat b{font-family:"Space Grotesk";font-size:1.2rem;display:block;background:linear-gradient(90deg,var(--c3),var(--c1));-webkit-background-clip:text;background-clip:text;-webkit-text-fill-color:transparent;color:transparent}
+.stat span{display:block;color:var(--text-3);font-size:.75rem;margin-top:.2rem}
+
+/* Hero Visual */
+.hero-visual{position:relative;aspect-ratio:1/1;max-width:400px;margin-inline:auto}
+.orb{position:absolute;inset:0;border-radius:50%;background:radial-gradient(circle at 30% 30%, rgba(255,255,255,.2), transparent 45%), linear-gradient(135deg, var(--c1), var(--c2));filter:blur(1px);animation:float 6s ease-in-out infinite;box-shadow:inset 0 0 40px rgba(255,255,255,.1),0 0 60px rgba(139,92,246,.25)}
+.orb::after{content:"";position:absolute;inset:14%;border-radius:50%;background:var(--bg-2)}
+.ring{position:absolute;inset:-6%;border-radius:50%;border:1px dashed rgba(255,255,255,.12);animation:spin 25s linear infinite}
+.ring2{inset:-14%;animation-direction:reverse;opacity:.5}
+@keyframes float{0%,100%{transform:translateY(0)}50%{transform:translateY(-10px)}}
+@keyframes spin{to{transform:rotate(360deg)}}
+.code-card{position:absolute;bottom:0;left:50%;transform:translateX(-50%);width:90%;padding:.9rem;background:rgba(10,18,36,.9);border:1px solid rgba(255,255,255,.12);border-radius:14px;backdrop-filter:blur(10px);font-family:"JetBrains Mono",monospace;font-size:.75rem;color:#a8c0e0}
+.code-card b{color:#7dd3fc}
+
+/* Sections */
+section{padding:4.5rem 0;position:relative}
+.section-head{display:flex;align-items:end;justify-content:space-between;margin-bottom:2rem;gap:1rem;flex-wrap:wrap}
+.section-title{display:flex;align-items:center;gap:.6rem}
+.section-title i{width:36px;height:36px;display:grid;place-items:center;border-radius:10px;background:linear-gradient(135deg,var(--c1),var(--c2));box-shadow:0 6px 18px rgba(59,130,246,.3)}
+.section-title h2{margin:0}
+.section-sub{color:var(--text-3);max-width:50ch;font-size:.95rem}
+
+/* Timeline/Experience */
+.timeline{position:relative;padding-left:1.2rem}
+.timeline::before{content:"";position:absolute;left:8px;top:0;bottom:0;width:2px;background:linear-gradient(var(--c1),transparent)}
+.exp{position:relative;margin-bottom:1.4rem}
+.exp::before{content:"";position:absolute;left:4px;top:.5rem;width:12px;height:12px;border-radius:50%;background:var(--bg);border:3px solid var(--c2);box-shadow:0 0 0 3px rgba(139,92,246,.15)}
+.card{position:relative;background:var(--surface);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:1.3rem;backdrop-filter:blur(8px);transition:var(--transition)}
+.card:hover,.card:focus-within{transform:translateY(-3px);border-color:rgba(59,130,246,.5);box-shadow:0 15px 35px rgba(0,0,0,.4)}
+.role-row{display:flex;justify-content:space-between;gap:1rem;flex-wrap:wrap;margin-bottom:.5rem}
+.role{font-weight:700;font-size:1.05rem}
+.company{color:#93c5fd;font-weight:600}
+.date{color:var(--text-3);font-family:"JetBrains Mono",monospace;font-size:.8rem;background:rgba(255,255,255,.06);padding:.2rem .5rem;border-radius:6px;border:1px solid rgba(255,255,255,.08)}
+.bullets{list-style:none;margin-top:.5rem;display:grid;gap:.4rem}
+.bullets li{position:relative;padding-left:1.2rem;color:var(--text-2);font-size:.95rem}
+.bullets li::before{content:"▹";position:absolute;left:0;color:var(--c3);font-weight:600}
+
+/* Projects */
+.projects{display:grid;grid-template-columns:repeat(auto-fit,minmax(280px,1fr));gap:1rem}
+.project{position:relative;padding:1.3rem;border-radius:var(--radius);background:var(--surface);border:1px solid rgba(255,255,255,.1);overflow:hidden;transition:var(--transition);cursor:pointer}
+.project:hover,.project:focus{transform:translateY(-4px);border-color:rgba(139,92,246,.5);outline:none}
+.project h3{margin-bottom:.3rem;color:var(--text)}
+.project p{color:var(--text-2);margin-bottom:.8rem;font-size:.95rem}
+.chips{display:flex;flex-wrap:wrap;gap:.4rem}
+.chip{font-family:"JetBrains Mono",monospace;font-size:.75rem;padding:.25rem .5rem;border-radius:6px;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.1);color:#c7d2fe}
+.project[hidden]{display:none}
+
+/* Filter Buttons */
+.filter-bar{display:flex;gap:.4rem;flex-wrap:wrap;margin-bottom:1rem}
+.filter-btn{padding:.4rem .65rem;border-radius:999px;background:rgba(255,255,255,.04);border:1px solid rgba(255,255,255,.08);color:var(--text-2);cursor:pointer;font-weight:500;font-size:.85rem;transition:var(--transition)}
+.filter-btn:hover,.filter-btn:focus{background:rgba(255,255,255,.1)}
+.filter-btn.active{background:linear-gradient(135deg,var(--c1),var(--c2));color:white;border-color:transparent}
+
+/* Skills */
+.skills-wrap{display:grid;grid-template-columns:1.1fr .9fr;gap:1rem}
+.skill-group{background:var(--surface);border:1px solid rgba(255,255,255,.1);border-radius:var(--radius);padding:1.1rem}
+.skill-group h4{display:flex;align-items:center;gap:.4rem;margin-bottom:.7rem;color:#dbeafe;font-size:1rem}
+.tags{display:flex;flex-wrap:wrap;gap:.4rem}
+.tag{padding:.35rem .6rem;border-radius:8px;font-weight:500;font-size:.8rem;color:#cbd5e1;background:rgba(255,255,255,.06);border:1px solid rgba(255,255,255,.12);transition:var(--transition)}
+.tag:hover,.tag:focus{transform:translateY(-2px);border-color:var(--c1);box-shadow:0 6px 18px rgba(0,0,0,.3)}
+.tag[data-c="1"]{border-color:rgba(59,130,246,.4)}
+.tag[data-c="2"]{border-color:rgba(139,92,246,.4)}
+.tag[data-c="3"]{border-color:rgba(6,182,212,.4)}
+.tag[data-c="4"]{border-color:rgba(245,158,11,.4)}
+.tag[data-c="5"]{border-color:rgba(236,72,153,.4)}
+
+/* Achievements */
+.achieve{display:grid;grid-template-columns:repeat(auto-fit,minmax(240px,1fr));gap:1rem}
+.ach{position:relative;padding:1.1rem;border-radius:var(--radius);background:linear-gradient(180deg,rgba(139,92,246,.1),rgba(59,130,246,.05));border:1px solid rgba(139,92,246,.25)}
+.ach i{font-size:1.2rem;width:40px;height:40px;display:grid;place-items:center;border-radius:10px;background:rgba(255,255,255,.08);margin-bottom:.5rem;color:#c4b5fd}
+.ach h4{margin-bottom:.2rem;font-size:1.05rem}
+.ach p{color:#c7d2fe;font-size:.9rem}
+
+/* Education & Contact */
+.split{display:grid;grid-template-columns:1fr 1fr;gap:1rem}
+.edu{padding:1.2rem;border-radius:var(--radius);background:var(--surface);border:1px solid rgba(255,255,255,.1)}
+.edu h3{margin-bottom:.3rem;font-size:1.1rem}
+.edu .meta{color:var(--c3);font-weight:600;font-size:.9rem;margin-top:.3rem}
+.contact{padding:1.4rem;border-radius:var(--radius);background:linear-gradient(135deg,rgba(59,130,246,.15),rgba(139,92,246,.12));border:1px solid rgba(255,255,255,.15);text-align:center}
+.contact h3{font-size:1.4rem;margin-bottom:.3rem}
+.contact p{color:#d1d5db;font-size:.95rem}
+.contact-actions{display:flex;gap:.6rem;justify-content:center;flex-wrap:wrap;margin-top:.9rem}
+
+/* Footer */
+footer{padding:2.5rem 0 3rem;border-top:1px solid rgba(255,255,255,.08);background:linear-gradient(to top,rgba(0,0,0,.3),transparent);text-align:center;color:var(--text-3);font-size:.9rem}
+footer a{color:#a5b4fc}
+footer a:hover,footer a:focus{color:var(--c1)}
+
+/* Reveal Animation */
+.reveal{opacity:0;transform:translateY(12px);transition:opacity .5s ease,transform .5s ease}
+.reveal.show{opacity:1;transform:none}
+
+/* Modal */
+.modal-backdrop{position:fixed;inset:0;background:rgba(1,4,10,.7);backdrop-filter:blur(4px);display:flex;align-items:center;justify-content:center;z-index:2200;opacity:0;pointer-events:none;transition:opacity .2s ease}
+.modal-backdrop.open{opacity:1;pointer-events:auto}
+.modal{width:min(720px,94%);background:var(--surface);border-radius:14px;padding:1.3rem;border:1px solid rgba(255,255,255,.12);box-shadow:0 25px 70px rgba(0,0,0,.5);max-height:90vh;overflow-y:auto}
+.modal .close{position:absolute;right:12px;top:12px;background:transparent;border:0;color:var(--text-2);font-size:1.2rem;cursor:pointer;padding:.3rem;border-radius:6px}
+.modal .close:hover,.modal .close:focus{background:rgba(255,255,255,.1);color:var(--text)}
+
+/* Skip Link */
+.skip-link{position:absolute;left:-9999px;top:auto;width:1px;height:1px;overflow:hidden;z-index:2500}
+.skip-link:focus{position:fixed;left:1rem;top:1rem;width:auto;height:auto;padding:.6rem 1rem;background:var(--c1);color:white;border-radius:8px;font-weight:600}
+
+/* Responsive */
+@media(max-width:980px){
+  .hero-grid{grid-template-columns:1fr;text-align:center}
+  .hero-actions{justify-content:center}
+  .stats{justify-content:center}
+  .hero-visual{order:-1;margin-bottom:1rem}
+  .skills-wrap{grid-template-columns:1fr}
+  .split{grid-template-columns:1fr}
+  .section-head{flex-direction:column;align-items:flex-start}
+  .section-sub{text-align:center}
+}
+@media(max-width:720px){
+  :root{--nav:64px}
+  .nav-links{display:none}
+  .mobile-toggle{display:inline-flex}
+  section{padding:3.5rem 0}
+  .card{padding:1.1rem}
+  .bullets li{font-size:.9rem}
+}
+@media(max-width:480px){
+  h1{font-size:2.2rem}
+  .btn{padding:.75rem 1rem;font-size:.9rem}
+  .stat{min-width:100px;padding:.6rem .7rem}
+  .stat b{font-size:1.1rem}
+}
+
+/* Reduced Motion */
+@media(prefers-reduced-motion:reduce){
+  *,*::before,*::after{animation-duration:.01ms!important;animation-iteration-count:1!important;transition-duration:.01ms!important;scroll-behavior:auto!important}
+  body{background-attachment:scroll}
+}
+
+/* Focus Visible Enhancement */
+:focus-visible{outline:2px solid var(--c1);outline-offset:2px}
+a:focus-visible,button:focus-visible,.card:focus-visible,.project:focus-visible,.tag:focus-visible,.filter-btn:focus-visible{border-radius:8px}
+
+/* Print Styles */
+@media print{
+  nav,.progress,.mobile-toggle,.hero-visual,.filter-bar,.contact-actions{display:none}
+  body{background:white;color:black}
+  .card,.project,.skill-group,.ach,.edu,.contact{border:1px solid #ccc;box-shadow:none}
+  a{color:#0066cc;text-decoration:underline}
+}
+</style>
+</head>
+<body>
+<div class="progress" id="progress" role="progressbar" aria-valuenow="0" aria-valuemin="0" aria-valuemax="100"></div>
+<a class="skip-link" href="#main">Skip to main content</a>
+
+<nav aria-label="Main navigation">
+  <div class="container nav-inner">
+    <a class="brand" href="#"><span class="brand-badge" aria-hidden="true"><i class="fa-solid fa-microchip"></i></span> Surya Krishna</a>
+    
+    <button id="mobileToggle" class="mobile-toggle" aria-label="Toggle navigation menu" aria-expanded="false" aria-controls="mobileMenu">
+      <i class="fa-solid fa-bars" aria-hidden="true"></i>
+    </button>
+    
+    <ul class="nav-links">
+      <li><a href="#experience">Experience</a></li>
+      <li><a href="#projects">Projects</a></li>
+      <li><a href="#skills">Skills</a></li>
+      <li><a href="#achievements">Awards</a></li>
+      <li><a href="#contact">Contact</a></li>
+    </ul>
+    
+    <a href="mailto:shkrishna2424@gmail.com" class="cta-small" aria-label="Email Surya Hemanth Krishna">
+      <i class="fa-solid fa-paper-plane" aria-hidden="true"></i> Hire Me
+    </a>
+  </div>
+
+  <!-- Mobile Menu -->
+  
+</nav>
+
+<header id="hero">
+  <div class="container hero-grid">
+    <div>
+      <span class="eyebrow reveal"><i class="fa-solid fa-car-side" aria-hidden="true"></i> Automotive Embedded • Infotainment • Connectivity</span>
+      <h1 class="hero-title reveal" style="transition-delay:.05s">Surya Hemanth Krishna</h1>
+      <p class="hero-sub reveal" style="transition-delay:.1s">Senior Test Engineer with 5+ years validating IVI and connectivity across Honda, GM, Nissan. I bridge deep CAN/UDS domain expertise with Python automation and Generative AI to ship faster, find defects earlier, and make test labs run themselves.</p>
+      <div class="hero-actions reveal" style="transition-delay:.15s">
+        <a class="btn btn-primary" href="mailto:shkrishna2424@gmail.com">
+          <i class="fa-solid fa-envelope" aria-hidden="true"></i> shkrishna2424@gmail.com
+        </a>
+        <a class="btn btn-ghost" href="#experience">
+          <i class="fa-solid fa-rocket" aria-hidden="true"></i> See Impact
+        </a>
+      </div>
+      <div class="stats reveal" style="transition-delay:.2s" aria-label="Key career statistics">
+        <div class="stat"><b>5+ yrs</b><span>Automotive QA</span></div>
+        <div class="stat"><b>12+ variants</b><span>Honda validation</span></div>
+        <div class="stat"><b>60% ↓</b><span>Manual log effort</span></div>
+        <div class="stat"><b>3 OEMs</b><span>Honda • GM • Nissan</span></div>
+      </div>
+    </div>
+    <div class="hero-visual reveal" aria-hidden="true">
+      <div class="ring"></div><div class="ring ring2"></div>
+      <div class="orb"></div>
+    </div>
+  </div>
+</header>
+
+<main id="main">
+  <section id="experience" aria-labelledby="exp-heading">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title"><i class="fa-solid fa-briefcase" aria-hidden="true"></i><h2 id="exp-heading">Work Experience</h2></div>
+        <p class="section-sub">From flashing ECUs to automating diagnostics — I own the full V-cycle for infotainment.</p>
+      </div>
+      <div class="timeline">
+        <article class="exp reveal">
+          <div class="card">
+            <div class="role-row">
+              <div><div class="role">Senior Test Engineer</div><div class="company">KPIT Technologies — Honda Motor Corp (SWT-DVT)</div></div>
+              <span class="date">May 2025 – Present • Pune</span>
+            </div>
+            <ul class="bullets">
+              <li>Lead validation across 12+ variants using CANoe, CANalyzer, GPS Simulator, FM Tuner.</li>
+              <li>Authored test policies & traceability matrices; drove SQT reviews for 100% requirement coverage.</li>
+              <li>Built Python+ADB log collector — cut manual effort by 60%.</li>
+              <li>ECU flashing via Renesas Flash Tool & QFIL with post-flash smoke validation.</li>
+              <li>Applied GenAI for test-case drafting & RCA docs — faster sprint turnaround.</li>
+              <li>Awarded KROWN Points for test policy excellence.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="exp reveal">
+          <div class="card">
+            <div class="role-row">
+              <div><div class="role">System Test Engineer</div><div class="company">People-Tech Group — General Motors</div></div>
+              <span class="date">Sep 2024 – May 2025</span>
+            </div>
+            <ul class="bullets">
+              <li>Owned CarPlay & Android Auto validation with PCTS & FACETS — seamless cross-device UX.</li>
+              <li>Built KPI suites for latency, streaming stability, voice command performance.</li>
+              <li>Wireless debugging with BT/Wi-Fi Sniffer; VIVID-CAN for real-world CAN simulation.</li>
+              <li>End-to-end defect lifecycle in Jira across multiple releases.</li>
+            </ul>
+          </div>
+        </article>
+        <article class="exp reveal">
+          <div class="card">
+            <div class="role-row">
+              <div><div class="role">Systems Engineer</div><div class="company">TCS — Nissan</div></div>
+              <span class="date">Apr 2021 – Sep 2024</span>
+            </div>
+            <ul class="bullets">
+              <li>Validated IVI & digital clusters: functional, performance, stress, longevity.</li>
+              <li>HMI/UX strategy — touch latency, refresh rates, animation smoothness.</li>
+              <li>Audio pipeline owner: ANC/RNC, Bluetooth/USB/media quality benchmarking.</li>
+              <li>Connectivity stacks: Wi-Fi, BT, NFC, V2X, OTA telematics.</li>
+              <li>Mentored juniors; improved coverage efficiency, reduced escape defects.</li>
+            </ul>
+          </div>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section id="projects" aria-labelledby="proj-heading">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title"><i class="fa-solid fa-wand-magic-sparkles" aria-hidden="true"></i><h2 id="proj-heading">Projects & Tools</h2></div>
+        <p class="section-sub">Automation that recruiters love — measurable impact, not just scripts.</p>
+      </div>
+      <div class="filter-bar" role="tablist" aria-label="Filter projects by category">
+        <button class="filter-btn active" data-filter="all" role="tab" aria-selected="true">All</button>
+        <button class="filter-btn" data-filter="automation" role="tab" aria-selected="false">Automation</button>
+        <button class="filter-btn" data-filter="genai" role="tab" aria-selected="false">GenAI</button>
+        <button class="filter-btn" data-filter="python" role="tab" aria-selected="false">Python</button>
+      </div>
+
+      <div class="projects" role="region" aria-label="Project showcase">
+        <article class="project reveal" data-tags="automation,adb,cli" tabindex="0" role="button" aria-label="Diagnostic Automation Tool project details">
+          <h3>Diagnostic Automation Tool</h3>
+          <p>One-click Windows Batch + ADB to auto-fetch logs & videos from head units. Standardized collection, slashed cycle time.</p>
+          <div class="chips" aria-label="Technologies used"><span class="chip">Batch</span><span class="chip">ADB</span><span class="chip">Windows CLI</span></div>
+        </article>
+        <article class="project reveal" style="transition-delay:.05s" data-tags="genai,prompting,jira" tabindex="0" role="button" aria-label="GenAI-Assisted Test Workflow project details">
+          <h3>GenAI-Assisted Test Workflow</h3>
+          <p>Prompt-engineered LLMs into test lifecycle — auto-draft cases, defect summaries, RCAs. Faster docs, better traceability.</p>
+          <div class="chips" aria-label="Technologies used"><span class="chip">LLMs</span><span class="chip">Prompting</span><span class="chip">Jira</span></div>
+        </article>
+        <article class="project reveal" style="transition-delay:.1s" data-tags="python,adb,parsing" tabindex="0" role="button" aria-label="Python + ADB Log Collector project details">
+          <h3>Python + ADB Log Collector</h3>
+          <p>Systematic pull-parse-archive for diagnostics during regression/sanity. 60% manual effort reduction.</p>
+          <div class="chips" aria-label="Technologies used"><span class="chip">Python</span><span class="chip">ADB</span><span class="chip">Parsing</span></div>
+        </article>
+      </div>
+
+      <!-- Project Detail Modal -->
+      <div id="projModalBackdrop" class="modal-backdrop" aria-hidden="true" role="dialog" aria-modal="true" aria-labelledby="projTitle">
+        <div class="modal">
+          <button class="close" id="projClose" aria-label="Close project details">✕</button>
+          <h3 id="projTitle"></h3>
+          <p id="projDesc" style="color:var(--text-2);margin-top:.5rem"></p>
+          <div id="projChips" class="chips" style="margin-top:.8rem"></div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="skills" aria-labelledby="skills-heading">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title"><i class="fa-solid fa-layer-group" aria-hidden="true"></i><h2 id="skills-heading">Skills & Technologies</h2></div>
+        <p class="section-sub">Color-coded by domain — because great engineers think in systems.</p>
+      </div>
+      <div class="skills-wrap">
+        <div class="skill-group reveal">
+          <h4><i class="fa-solid fa-vial" style="color:var(--c1)" aria-hidden="true"></i> Testing & Simulation</h4>
+          <div class="tags" role="list" aria-label="Testing and simulation tools">
+            <span class="tag" data-c="1" role="listitem">CANoe</span><span class="tag" data-c="1" role="listitem">CANalyzer</span><span class="tag" data-c="1" role="listitem">FACETS 3.0</span><span class="tag" data-c="1" role="listitem">PCTS</span><span class="tag" data-c="1" role="listitem">VIVID-CAN</span><span class="tag" data-c="1" role="listitem">GPS Simulator</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4><i class="fa-solid fa-network-wired" style="color:var(--c3)" aria-hidden="true"></i> Protocols & Connectivity</h4>
+          <div class="tags" role="list" aria-label="Protocols and connectivity technologies">
+            <span class="tag" data-c="3" role="listitem">CAN / CAN-TP</span><span class="tag" data-c="3" role="listitem">UDS</span><span class="tag" data-c="3" role="listitem">Bluetooth HFP/A2DP/AVRCP</span><span class="tag" data-c="3" role="listitem">CarPlay</span><span class="tag" data-c="3" role="listitem">Android Auto</span><span class="tag" data-c="3" role="listitem">OTA</span><span class="tag" data-c="3" role="listitem">V2X</span><span class="tag" data-c="3" role="listitem">NFC</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4><i class="fa-solid fa-microchip" style="color:var(--c2)" aria-hidden="true"></i> Flashing & Automation</h4>
+          <div class="tags" role="list" aria-label="Flashing and automation tools">
+            <span class="tag" data-c="2" role="listitem">Renesas Flash</span><span class="tag" data-c="2" role="listitem">QFIL</span><span class="tag" data-c="2" role="listitem">FASTBOOT</span><span class="tag" data-c="2" role="listitem">Tera Term</span><span class="tag" data-c="2" role="listitem">ADB</span><span class="tag" data-c="2" role="listitem">CAPL</span><span class="tag" data-c="2" role="listitem">Python</span>
+          </div>
+        </div>
+        <div class="skill-group reveal">
+          <h4><i class="fa-solid fa-robot" style="color:var(--c5)" aria-hidden="true"></i> AI, ALM & Process</h4>
+          <div class="tags" role="list" aria-label="AI, ALM and process methodologies">
+            <span class="tag" data-c="5" role="listitem">Generative AI</span><span class="tag" data-c="5" role="listitem">Prompt Engineering</span><span class="tag" data-c="4" role="listitem">Jira</span><span class="tag" data-c="4" role="listitem">Zephyr</span><span class="tag" data-c="4" role="listitem">TestRail</span><span class="tag" data-c="4" role="listitem">DOORS</span><span class="tag" data-c="4" role="listitem">Agile/Scrum</span><span class="tag" data-c="4" role="listitem">V-Model</span>
+          </div>
+        </div>
+      </div>
+    </div>
+  </section>
+
+  <section id="achievements" aria-labelledby="ach-heading">
+    <div class="container">
+      <div class="section-head">
+        <div class="section-title"><i class="fa-solid fa-trophy" aria-hidden="true"></i><h2 id="ach-heading">Achievements</h2></div>
+        <p class="section-sub">Impact recognized by peers and leadership.</p>
+      </div>
+      <div class="achieve">
+        <article class="ach reveal">
+          <i class="fa-solid fa-gem" aria-hidden="true"></i>
+          <h4>TCS 1,000 Gems Award</h4>
+          <p>11 verified defects in one month on Nissan program — top QA contributor.</p>
+        </article>
+        <article class="ach reveal" style="transition-delay:.05s">
+          <i class="fa-solid fa-crown" aria-hidden="true"></i>
+          <h4>KPIT KROWN Points</h4>
+          <p>Excellence in test policy creation and cross-platform validation standards.</p>
+        </article>
+        <article class="ach reveal" style="transition-delay:.1s">
+          <i class="fa-solid fa-bolt" aria-hidden="true"></i>
+          <h4>Automation Impact</h4>
+          <p>Built tools that eliminated manual log retrieval across multiple Honda variants.</p>
+        </article>
+      </div>
+    </div>
+  </section>
+
+  <section aria-labelledby="edu-contact-heading">
+    <div class="container split">
+      <article class="edu reveal" id="education">
+        <h3><i class="fa-solid fa-graduation-cap" style="color:var(--c3)" aria-hidden="true"></i> Education</h3>
+        <h4 style="margin-top:.4rem">B.Tech — Electronics & Communication Engineering</h4>
+        <p style="color:var(--text-2)">Kshatriya College of Engineering, JNTUH</p>
+        <div class="meta">2019</div>
+      </article>
+      <article class="contact reveal" id="contact">
+        <h3>Let's build the next-gen IVI</h3>
+        <p>Open to Senior Test Engineer, Test Automation Lead, and AI-driven QA roles.</p>
+        <div class="contact-actions">
+          <a class="btn btn-primary" href="mailto:shkrishna2424@gmail.com"><i class="fa-solid fa-envelope" aria-hidden="true"></i> Email</a>
+          <a class="btn btn-ghost" href="tel:+918499049398"><i class="fa-solid fa-phone" aria-hidden="true"></i> +91 8499049398</a>
+          <a class="btn btn-ghost" href="https://www.linkedin.com/in/surya-hemanth-krishna-59b94b2a4/" target="_blank" rel="noopener noreferrer"><i class="fa-brands fa-linkedin" aria-hidden="true"></i> LinkedIn</a>
+        </div>
+        <p style="margin-top:.8rem;font-size:.9rem;color:#9fb0c8"><i class="fa-solid fa-location-dot" aria-hidden="true"></i> Pune, Maharashtra, India</p>
+      </article>
+    </div>
+  </section>
+</main>
+
+<footer>
+  <div class="container">
+    <p>© <span id="y"></span> Surya Hemanth Krishna</p>
+    <p style="margin-top:.4rem">Built for recruiters who value <a href="#projects">automation</a>, <a href="#skills">depth</a>, and <a href="#experience">OEM impact</a>.</p>
+  </div>
+</footer>
+
+<script>
+(function() {
+  'use strict';
+
+  // Progress bar
+  const progress = document.getElementById('progress');
+  function updateProgress() {
+    const scrollTop = window.scrollY || document.documentElement.scrollTop;
+    const docHeight = document.documentElement.scrollHeight - window.innerHeight;
+    const percent = docHeight > 0 ? (scrollTop / docHeight) * 100 : 0;
+    progress.style.width = Math.min(100, Math.max(0, percent)) + '%';
+    progress.setAttribute('aria-valuenow', Math.round(percent));
+  }
+  window.addEventListener('scroll', updateProgress, { passive: true });
+  updateProgress();
+
+  // Reveal on scroll
+  const revealElements = document.querySelectorAll('.reveal');
+  const revealObserver = new IntersectionObserver((entries) => {
+    entries.forEach(entry => {
+      if (entry.isIntersecting) {
+        entry.target.classList.add('show');
+        revealObserver.unobserve(entry.target);
+      }
+    });
+  }, { threshold: 0.1, rootMargin: '0px 0px -50px 0px' });
+  revealElements.forEach(el => revealObserver.observe(el));
+
+  // Mobile menu toggle
+  const mobileToggle = document.getElementById('mobileToggle');
+  const mobileMenu = document.getElementById('mobileMenu');
+  
+  function toggleMobileMenu(open) {
+    mobileMenu.classList.toggle('open', open);
+    mobileMenu.setAttribute('aria-hidden', !open);
+    mobileToggle.setAttribute('aria-expanded', open);
+    document.body.style.overflow = open ? 'hidden' : '';
+    if (open) {
+      mobileMenu.querySelector('a')?.focus();
+    } else {
+      mobileToggle.focus();
+    }
+  }
+  
+  if (mobileToggle && mobileMenu) {
+    mobileToggle.addEventListener('click', () => {
+      const isOpen = !mobileMenu.classList.contains('open');
+      toggleMobileMenu(isOpen);
+    });
+    
+    mobileMenu.querySelectorAll('a').forEach(link => {
+      link.addEventListener('click', () => toggleMobileMenu(false));
+    });
+    
+    // Close on Escape
+    document.addEventListener('keydown', (e) => {
+      if (e.key === 'Escape' && mobileMenu.classList.contains('open')) {
+        toggleMobileMenu(false);
+      }
+    });
+    
+    // Close on outside click
+    mobileMenu.addEventListener('click', (e) => {
+      if (e.target === mobileMenu) toggleMobileMenu(false);
+    });
+  }
+
+  // Smooth scroll for anchor links
+  document.querySelectorAll('a[href^="#"]').forEach(anchor => {
+    anchor.addEventListener('click', function(e) {
+      const href = this.getAttribute('href');
+      if (href && href.startsWith('#') && href !== '#') {
+        const target = document.querySelector(href);
+        if (target) {
+          e.preventDefault();
+          target.scrollIntoView({ behavior: 'smooth', block: 'start' });
+          if (mobileMenu?.classList.contains('open')) toggleMobileMenu(false);
+        }
+      }
+    });
+  });
+
+  // Update year
+  document.getElementById('y').textContent = new Date().getFullYear();
+
+  // Project filtering
+  const filterBtns = document.querySelectorAll('.filter-btn');
+  const projects = document.querySelectorAll('.project');
+  
+  filterBtns.forEach(btn => {
+    btn.addEventListener('click', () => {
+      filterBtns.forEach(b => {
+        b.classList.remove('active');
+        b.setAttribute('aria-selected', 'false');
+      });
+      btn.classList.add('active');
+      btn.setAttribute('aria-selected', 'true');
+      
+      const filter = btn.dataset.filter;
+      projects.forEach(project => {
+        if (filter === 'all') {
+          project.hidden = false;
+        } else {
+          const tags = (project.dataset.tags || '').split(',');
+          project.hidden = !tags.includes(filter);
+        }
+      });
+    });
+  });
+
+  // Project modal
+  const modalBackdrop = document.getElementById('projModalBackdrop');
+  const modalTitle = document.getElementById('projTitle');
+  const modalDesc = document.getElementById('projDesc');
+  const modalChips = document.getElementById('projChips');
+  const modalClose = document.getElementById('projClose');
+  let lastFocusedElement = null;
+
+  function openModal(project) {
+    lastFocusedElement = document.activeElement;
+    
+    const title = project.querySelector('h3')?.textContent || '';
+    const desc = project.querySelector('p')?.textContent || '';
+    const chips = Array.from(project.querySelectorAll('.chip')).map(c => c.textContent.trim());
+    
+    modalTitle.textContent = title;
+    modalDesc.textContent = desc;
+    modalChips.innerHTML = chips.map(c => `<span class="chip">${c}</span>`).join('');
+    
+    modalBackdrop.classList.add('open');
+    modalBackdrop.setAttribute('aria-hidden', 'false');
+    document.body.style.overflow = 'hidden';
+    modalClose.focus();
+  }
+
+  function closeModal() {
+    modalBackdrop.classList.remove('open');
+    modalBackdrop.setAttribute('aria-hidden', 'true');
+    document.body.style.overflow = '';
+    if (lastFocusedElement) lastFocusedElement.focus();
+  }
+
+  projects.forEach(project => {
+    project.addEventListener('click', () => openModal(project));
+    project.addEventListener('keydown', (e) => {
+      if (e.key === 'Enter' || e.key === ' ') {
+        e.preventDefault();
+        openModal(project);
+      }
+    });
+  });
+
+  modalClose?.addEventListener('click', closeModal);
+  modalBackdrop?.addEventListener('click', (e) => {
+    if (e.target === modalBackdrop) closeModal();
+  });
+  document.addEventListener('keydown', (e) => {
+    if (e.key === 'Escape' && modalBackdrop?.classList.contains('open')) {
+      closeModal();
+    }
+  });
+
+  // Project hover effect (glow follow)
+  document.querySelectorAll('.project').forEach(card => {
+    card.addEventListener('pointermove', (e) => {
+      const rect = card.getBoundingClientRect();
+      card.style.setProperty('--mx', (e.clientX - rect.left) + 'px');
+      card.style.setProperty('--my', (e.clientY - rect.top) + 'px');
+    });
+  });
+
+  // Keyboard navigation for filter buttons
+  filterBtns.forEach((btn, index) => {
+    btn.addEventListener('keydown', (e) => {
+      if (e.key === 'ArrowRight' || e.key === 'ArrowDown') {
+        e.preventDefault();
+        const next = filterBtns[(index + 1) % filterBtns.length];
+        next.focus();
+      } else if (e.key === 'ArrowLeft' || e.key === 'ArrowUp') {
+        e.preventDefault();
+        const prev = filterBtns[(index - 1 + filterBtns.length) % filterBtns.length];
+        prev.focus();
+      }
+    });
+  });
+
+})();
+</script>
+</body>
+</html>
